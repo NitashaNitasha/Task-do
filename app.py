@@ -95,7 +95,7 @@ def update(id):
 def theme_select():
     return render_template('themes.html')
 
-@app.route('/<selected_theme>', methods=['GET', 'POST'])
+@app.route('/set-theme/<selected_theme>', methods=['GET', 'POST'])
 def set_theme(selected_theme):
     global default_theme
     default_theme = selected_theme
