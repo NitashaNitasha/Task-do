@@ -1,0 +1,90 @@
+/* Existing CSS code */
+body {
+  color: #c0c0c0; /* Light gray text */
+  text-align: center;
+  font-size: 1.6rem;
+  background-color: #1a1a1a; /* Dark metal black background */
+  font-family: Arial, sans-serif; /* Clean sans-serif font */
+}
+
+table {
+  margin: auto;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+table th {
+  padding: 0.8rem;
+  color: #808080; /* Gray */
+}
+
+table td {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: #333; /* Dark gray */
+  font-size: 1.6rem;
+}
+
+td.completed {
+  text-decoration: line-through;
+}
+
+a {
+  font-size: 2.5rem;
+  text-decoration: none;
+  color: #808080; /* Gray */
+}
+
+/* New styles for the form */
+form {
+  margin-top: 3rem; /* Spacing from the table */
+}
+
+input[type="text"] {
+  padding: 0.5rem;
+  width: 100%; /* Full width on smaller screens */
+  max-width: 600px; /* Limit maximum width */
+  font-size: 1.6rem;
+  border: 2px solid #666; /* Dark gray border */
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #333; /* Dark gray background */
+  color: #c0c0c0; /* Light gray text */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #555; /* Slightly lighter gray on hover */
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 1.4rem; /* Decrease font size for smaller screens */
+  }
+
+  table {
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  table th,
+  table td {
+    font-size: 1.4rem; /* Decrease font size for smaller screens */
+  }
+
+  a {
+    font-size: 2rem; /* Decrease font size for smaller screens */
+  }
+
+  input[type="text"] {
+    width: 100%; /* Full width on smaller screens */
+    max-width: none; /* Remove maximum width */
+  }
+}

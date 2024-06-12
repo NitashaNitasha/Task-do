@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+{% block head %}
+<title>Updating task</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/main.css') }}">
+{% if theme %}
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/' + theme) }}">
+{% endif %}
+{% endblock %}
+
+{% block body %}
+<form action="/update/{{task.id}}" method="POST" >
+    <input type="text" name="content" id="content" value="{{task.content}}">
+    <input type="submit" value="update task">
+</form>
+{% endblock %}

@@ -1,0 +1,50 @@
+/* Container for the content */
+.content {
+  text-align: center; /* Center align content */
+}
+
+/* Container for the four boxes */
+.box-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow boxes to wrap on smaller screens */
+  gap: 20px; /* Adjust the gap between boxes */
+  margin-top: 20px; /* Adjust the top margin */
+}
+
+/* Style for each box */
+.box {
+  background-color: #f0f0f0; /* Light gray background */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  flex: 1; /* Each box should take equal space */
+  max-width: 300px; /* Limit maximum width of each box */
+}
+
+/* Link styles */
+.box a {
+  display: block;
+  font-size: 12rem;
+  text-decoration: none;
+  color: #333; /* Dark gray text */
+  margin-bottom: 10px;
+}
+
+/* Hover effect on links */
+.box a:hover {
+  color: #007bff; /* Blue on hover */
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+  .box-container {
+    flex-direction: column; /* Stack boxes vertically on smaller screens */
+    align-items: center; /* Center align boxes */
+  }
+
+  .box {
+    max-width: none; /* Remove maximum width */
+    width: 80%; /* Set width to 90% of the container */
+  }
+}
