@@ -15,7 +15,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.8 
+          python-version: 3.8
 
       - name: Create virtual environment
         run: |
@@ -35,4 +35,9 @@ jobs:
           echo "Contents of site-packages: $(ls -l venv/lib/python*/site-packages)"
 
       - name: Run tests
-        run: python app.py
+        run: |
+          python -m pytest  # Adjust this command based on your testing framework
+
+      - name: Deactivate virtual environment
+        run: |
+          deactivate
