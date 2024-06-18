@@ -21,13 +21,10 @@ table th {
 table td {
   padding-left: 1rem;
   padding-right: 1rem;
-  background-color: #fccfe4; /* Lavender background */
+  background-color: #fccfe4;
   font-size: 1.6rem;
 }
 
-td.completed {
-  text-decoration: line-through;
-}
 
 a {
   font-size: 2.5rem;
@@ -42,7 +39,7 @@ form {
 
 input[type="text"] {
   padding: 0.5rem;
-  width: 100%; /* Set width to 100% for responsiveness */
+  width: 100%;
   max-width: 600px; /* Set maximum width */
   font-size: 1.6rem;
   border: 2px solid #ebc0fc; /* Hot pink border */
@@ -69,5 +66,5 @@ input[type="submit"]:hover {
   body {
     font-size: 1.4rem; /* Adjust font size for smaller screens */
   }
-  .paint{font-size:1rem;}
+  .paint,.mic{font-size:2rem;}
 }

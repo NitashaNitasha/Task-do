@@ -25,9 +25,7 @@ table td {
   font-size: 1.6rem;
 }
 
-td.completed {
-  text-decoration: line-through;
-}
+]
 
 a {
   font-size: 2rem;
@@ -69,4 +67,5 @@ input[type="submit"]:hover {
   body {
     font-size: 1.4rem; /* Adjust font size for smaller screens */
   }
+  .paint,.mic{font-size:2rem;}
 }
