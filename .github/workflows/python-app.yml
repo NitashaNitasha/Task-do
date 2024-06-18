@@ -36,7 +36,7 @@ jobs:
 
       - name: Run tests
         run: |
-          python -m pytest  # Adjust this command based on your testing framework
+          python app.py  # Adjust this command based on your testing framework
 
       - name: Deactivate virtual environment
         run: |
