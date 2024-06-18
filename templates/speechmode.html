@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Speech Mode</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% if theme %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/' + theme) }}">
+{% endif %}
+{% endblock %}
+
+{% block body %}
+<h2>Speech Mode</h2>
+<h6>Create a Task:"Create a task [task description]" ||| Update a Task:"Update task [task NO.]"</h6>
+<h6>Delete a Task:"Delete task [task NO.]" ||| Mark Task as Completed:"Mark as complete task [task NO.] "</h6>
+<h6>Mark Task as Not Completed:"Mark as not complete task [task NO.]" |||</h6>
+<h6>Change Theme:"Change theme" 🐼 (panda) → Theme 4
+☃️ (snowman) → Theme 3
+🐻 (bear) → Theme 2
+🐇 (bunny) → Theme 1
+    </h6>
+
+<h6>Exit Speech Mode:"Quit" or "Exit speech mode"</h6>
+
+<form action="/mic_on" method="post">
+    <input type="submit" value="recognize speech"></input>
+</form>
+{% if speech %}
+<h6>{{ speech }}</h6>
+<h6>{{ action }}</h6>
+{% endif %}
+{% endblock %}
