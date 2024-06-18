@@ -104,7 +104,7 @@ def update(id):
 
 @app.route('/mic_on/', methods=['GET', 'POST'])
 def mic_on():
-    global speech_mode
+    global speech_mode,default_theme
     if not speech_mode:
         speech_mode = True
         return render_template('speechmode.html', instruction="Speak a command...", theme=themes.get(default_theme))
@@ -140,11 +140,11 @@ def mic_on():
                     task.completed = False  # Resetting completion status when updating
                     try:
                         db.session.commit()
-                        return redirect('/')
+                        return redirect('/mic_off')
                     except:
                         return "Error updating task"
                 else:
-                    return redirect('/')
+                    return redirect('/mic_off')
 
             elif "delete" in text.lower():
                 task_to_delete = find_task_to_delete(text)
@@ -197,7 +197,7 @@ def mic_on():
                 return redirect('/set-theme/theme'+theme_no)
 
             else:
-                return render_template('speechmode.html', speech="Command not recognized.", action="Listening")
+                return redirect('/mic_off')
 
         except sr.WaitTimeoutError:
             print("No speech detected. Turning off speech mode...")
@@ -205,10 +205,10 @@ def mic_on():
             return redirect('/mic_off')
 
         except sr.UnknownValueError:
-            return render_template('speechmode.html', speech="Could not understand audio.", action="Listening")
+            return render_template('speechmode.html', speech="Could not understand audio.", action="Listening",theme=default_theme)
 
         except sr.RequestError as e:
-            return render_template('speechmode.html', speech=f"Could not request results: {str(e)}", action="Listening")
+            return render_template('speechmode.html', speech=f"Could not request results: {str(e)}", action="Listening",theme=default_theme)
 
 
 @app.route('/mic_off/')
