@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Redundancy Removal</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% if theme %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/' + theme) }}">
+{% endif %}
+{% endblock %}
+
+{% block body %}
+<h1>Redundancy Removal</h1>
+<form action="/remove_redundancy" method="post">
+    <label for="sentence">Enter a sentence:</label><br>
+    <input type="text" id="sentence" name="sentence"><br><br>
+    <button type="submit">Remove Redundant Words</button>
+</form>
+{% if original %}
+    <h3>Original Sentence:</h3>
+    <p>{{ original }}</p>
+    <h3>Cleaned Sentence:</h3>
+    <p>{{ cleaned }}</p>
+{% endif %}
+<a href="/">Back to Tasks</a>
+{% endblock %}

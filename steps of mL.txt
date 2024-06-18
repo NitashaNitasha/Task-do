@@ -1,0 +1,26 @@
+steps of mL
+1.)data pruning
+2.)choosing prediction Target(y)
+3.)choosing training data features(X)
+4.)fitting/training model on data
+5.)predicting Data
+6.)checking Quality of model(model validation)on validation data.
+
+
+techniques of ML
+1.)Decision trees 
+
+
+from Sklearn.trees import DesicionTreeRegressor
+my_model=DesicionTreeRegressor(random_state=2)
+	my_model.fit(X,y)
+	my_model.predict(X.head())or testdata
+
+from sklearn.model_selection import train_test_split
+train_X, val_X, train_y, val_y = train_test_split(X,y,random_state=1)
+my_model.fit(train_X,train_y)
+
+val_predictions =  iowa_model.predict(val_X)
+
+from sklearn.metrics import mean_absolute_error
+val_mae = mean_absolute_error(val_y,val_predictions)
