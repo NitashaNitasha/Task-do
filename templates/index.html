@@ -1,15 +1,9 @@
-{%extends 'base.html'%}
+<!-- index.html -->
+
+{% extends 'base.html' %}
 
 {% block head %}
-<title>Task</title>
-<style>
-    .paint {position:absolute;right:0;top:0;font-size:4rem;}
-</style>
-<link rel="stylesheet" href="{{ url_for('static', filename='CSS/main.css') }}">
-{% if theme %}
-<link rel="stylesheet" href="{{ url_for('static', filename='CSS/' + theme) }}">
-{% endif %}
-
+    {{ super() }}
 {% endblock %}
 
 {% block body %}
@@ -24,37 +18,40 @@
 <h1>🐇TASK-DO🐇</h1>
 {% endif %}
 
-<a href="/themes"  class="paint">🎨</a>
+<a href="/set_theme" class="paint">🎨</a>
+<a href="/mic_on" class="mic">🎤</a>
+
 {% if tasks|length < 1 %}
-<h3>No tasks currently added.Click on add to add one.</h3>
+<h3>No tasks currently added. Click on add to add one.</h3>
 {% else %}
 <table>
     <tr>
-        <th>status</th>
-        <th>task</th>
-        <th>actions</th>
+        <th>Status</th>
+        <th>Task</th>
+        <th>Actions</th>
     </tr>
-    {%for task in tasks%}
+    {% for task in tasks %}
     <tr>
-        {%if task.completed<=0%}
-        <td><a href="/completed/{{task.id}}">⬜</a></td>
-        <td>{{task.content}}</td>
-        {%else%}
-        <td><a href="/not-completed/{{task.id}}">✅</a></td>
-        <td style="text-decoration: line-through;">{{task.content}}</td>
-        {%endif%}
+        {% if task.completed <= 0 %}
+        <td><a href="/completed/{{ task.id }}">⬜</a></td>
+        <td>{{ task.content }}</td>
+        {% else %}
+        <td><a href="/not-completed/{{ task.id }}">✅</a></td>
+        <td style="text-decoration: line-through;">{{ task.content }}</td>
+        {% endif %}
         <td style="font-size:small;">
-            <a href="/delete/{{task.id}}">❌</a>
-            <a href="/update/{{task.id}}">🔄</a>
-            <br>
-            {{task.date_created.date()}}
+            <a href="/delete/{{ task.id }}">❌</a>
+            <a href="/update/{{ task.id }}">🔄</a><br>
+            {{ task.date_created.date() }}
         </td>
     </tr>
-    {%endfor%}
+    {% endfor %}
 </table>
 {% endif %}
+
 <form action="/" method="POST">
     <input type="text" name="content" id="content">
-    <input type="submit" value="add task">
+    <input type="submit" value="Add Task">
 </form>
+
 {% endblock %}

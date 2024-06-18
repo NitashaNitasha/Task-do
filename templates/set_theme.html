@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+
+{% block head %}
+<title>Task themes</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/themes.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+  <h1>THEMES</h1>
+  <div class="box-container">
+    <div class="box">
+      <a href="/set-theme/theme1">🐇</a>
+    </div>
+    <div class="box">
+      <a href="/set-theme/theme2">🐻</a>
+    </div>
+    <div class="box">
+      <a href="/set-theme/theme3">☃️</a>
+    </div>
+    <div class="box">
+      <a href="/set-theme/theme4">🐼</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
