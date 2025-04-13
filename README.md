@@ -42,17 +42,22 @@ http://127.0.0.1:5000
 
 Check out some of the available themes below:
 
-### 🌙 Panda theme (dark mode) 
-![Dark Mode](https://github.com/NitashaNitasha/Task-do/screenshots/Screenshot 2025-04-13 090232.png)
+## 🎨 Themes
 
-### ☀️ Bear theme (Vintage mode) 
-![Light Mode](https://github.com/NitashaNitasha/Task-do/screenshots/Screenshot 2025-04-13 090214.png)
+Check out some of the available themes below:
 
-### 🎨 Snowman theme (icy cool mode)  
-![Light Theme](https://github.com/NitashaNitasha/Task-do/screenshots/Screenshot 2025-04-13 090223.png)
+🐼 **Panda Theme** (Dark Mode)  
+![Dark Mode](https://github.com/NitashaNitasha/Task-do/blob/main/screenshots/Screenshot%202025-04-13%20090232.png)
 
-### 🎨 classic bunny theme (default mode)  
-![Kids Theme](https://github.com/NitashaNitasha/Task-do/screenshots/Screenshot 2025-04-13 090204.png)
+🐻 **Bear Theme** (Vintage Mode)  
+![Light Mode](https://github.com/NitashaNitasha/Task-do/blob/main/screenshots/Screenshot%202025-04-13%20090214.png)
+
+⛄ **Snowman Theme** (Icy Cool Mode)  
+![Icy Theme](https://github.com/NitashaNitasha/Task-do/blob/main/screenshots/Screenshot%202025-04-13%20090223.png)
+
+🐰 **Classic Bunny Theme** (Default Mode)  
+![Cute Theme](https://github.com/NitashaNitasha/Task-do/blob/main/screenshots/Screenshot%202025-04-13%20090204.png)
+
 
 
 ---
